@@ -13,9 +13,17 @@ end
 def kind
   case self
   when (@s1 == 0) || (@s2 == 0) || (@s3 == 0)
-    raise TriangleError
+    begin
+      raise TriangleError
+    rescue TriangleError => error
+      puts error.message1
+    end
   when ((@s1 + @s2) <= @s3) || ((@s1 + @s3) <= @s2) || ((@s2 + @s3) <= @s1)
-    raise TriangleError
+    begin
+      raise TriangleError
+    rescue TriangleError => error
+      puts error.message2
+    end
   when (@s1 == @s2) && (@s2 == @s3)
     kind = :equilateral
   when ((@s1 == @s2) && (@s1 != @s3)) || ((@s1 == @s3) && (@s1 != @s2)) || ((@s2 == @s3) && (@s2 != @s1))
@@ -27,7 +35,14 @@ def kind
 end
 
 class TriangleError < StandardError
-  # triangle error code
+  def message1
+    "INVALID TRIANGLE: All sides of a triangle must have a length greater than 0!"
+  end
+
+  def message2
+    "INVALID TRIANGLE: The sum of the lengths of two sides of a triangle must exceed that of the third."
+  end
+  
 end
 
 
