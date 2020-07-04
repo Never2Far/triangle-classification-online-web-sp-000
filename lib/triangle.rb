@@ -25,11 +25,11 @@ def kind
       puts error.message2
     end
   when (@s1 == @s2) && (@s2 == @s3)
-    kind = :equilateral
+    kind => :equilateral
   when ((@s1 == @s2) && (@s1 != @s3)) || ((@s1 == @s3) && (@s1 != @s2)) || ((@s2 == @s3) && (@s2 != @s1))
-    kind = :isosceles
+    kind => :isosceles
   when (@s1 != @s2) && (@s2 != @s3)
-    kind = :scalene
+    kind => :scalene
   end
   return kind
 end
