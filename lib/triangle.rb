@@ -11,24 +11,23 @@ end
 
 
 def kind
-  case self
-  when (@s1 == 0) || (@s2 == 0) || (@s3 == 0)
+  if (@s1 == 0) || (@s2 == 0) || (@s3 == 0)
     begin
       raise TriangleError
     rescue TriangleError => error
       puts error.message1
     end
-  when ((@s1 + @s2) <= @s3) || ((@s1 + @s3) <= @s2) || ((@s2 + @s3) <= @s1)
+  elsif ((@s1 + @s2) <= @s3) || ((@s1 + @s3) <= @s2) || ((@s2 + @s3) <= @s1)
     begin
       raise TriangleError
     rescue TriangleError => error
       puts error.message2
     end
-  when (@s1 == @s2) && (@s2 == @s3)
+  elsif (@s1 == @s2) && (@s2 == @s3)
     return :equilateral
-  when ((@s1 == @s2) && (@s1 != @s3)) || ((@s1 == @s3) && (@s1 != @s2)) || ((@s2 == @s3) && (@s2 != @s1))
+  elsif ((@s1 == @s2) && (@s1 != @s3)) || ((@s1 == @s3) && (@s1 != @s2)) || ((@s2 == @s3) && (@s2 != @s1))
     return :isosceles
-  when (@s1 != @s2) && (@s2 != @s3)
+  elsif (@s1 != @s2) && (@s2 != @s3)
     return :scalene
   end
 end
