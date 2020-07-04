@@ -42,7 +42,7 @@ class TriangleError < StandardError
   def message2
     "INVALID TRIANGLE: The sum of the lengths of two sides of a triangle must exceed that of the third."
   end
-  
+
 end
 
 
