@@ -25,13 +25,12 @@ def kind
       puts error.message2
     end
   when (@s1 == @s2) && (@s2 == @s3)
-    kind => :equilateral
+    return :equilateral
   when ((@s1 == @s2) && (@s1 != @s3)) || ((@s1 == @s3) && (@s1 != @s2)) || ((@s2 == @s3) && (@s2 != @s1))
-    kind => :isosceles
+    return :isosceles
   when (@s1 != @s2) && (@s2 != @s3)
-    kind => :scalene
+    return :scalene
   end
-  return kind
 end
 
 class TriangleError < StandardError
