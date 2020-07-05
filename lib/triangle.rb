@@ -9,7 +9,7 @@ def initialize(s1, s2, s3)
 end
 
 def valid?
-  if @sides.any? {|s|  (s <= 0) || (s == nil) }
+  if @sides.any? {|s|  s <= 0} || @sides.any?
     begin
         raise TriangleError
       rescue TriangleError => error
