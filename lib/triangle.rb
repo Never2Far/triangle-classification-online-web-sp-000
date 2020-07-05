@@ -11,19 +11,19 @@ end
 def valid?
   # if @sides.any? {|s|  s <= 0 } || @sides.any?
   if (@sides[0] <= 0) || (@sides[1] <= 0) || (@sides[2] <= 0)
-    
+
         raise TriangleError
-      
-        
-      
-      
+
+
+
+
   elsif ((@sides[0] + @sides[1]) <= @sides[2]) || ((@sides[0] + @sides[2]) <= @sides[1]) || ((@sides[1] + @sides[2]) <= @sides[0])
-      
+
         raise TriangleError
-      
-        
-      
-      
+
+
+
+
     else
       return true
     end
