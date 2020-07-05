@@ -9,7 +9,7 @@ def initialize(s1, s2, s3)
 end
 
 def valid?
-  if @sides.any? {|s|  s <= 0} || @sides.any?
+  if @sides.any? {|s|  s <= 0 } || @sides.any?
     begin
         raise TriangleError
       rescue TriangleError => error
@@ -32,7 +32,6 @@ end
 def kind
 if !valid?
   return :invalid
-
 elsif (@sides[0] == @sides[1]) && (@sides[1] == @sides[2])
   return :equilateral
 elsif ((@sides[0] == @sides[1]) && (@sides[0] != @sides[2])) || ((@sides[0] == @sides[2]) && (@sides[0] != @sides[1])) || ((@sides[1] == @sides[2]) && (@sides[1] != @sides[0]))
