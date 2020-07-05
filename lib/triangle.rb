@@ -9,8 +9,8 @@ def initialize(s1, s2, s3)
 end
 
 def valid?
-  # if @sides.any? {|s|  s <= 0 } || @sides.any?
-  if (@sides[0] <= 0) || (@sides[1] <= 0) || (@sides[2] <= 0)
+  if @sides.any? {|s|  s <= 0 } || @sides.any?
+  # if (@sides[0] <= 0) || (@sides[1] <= 0) || (@sides[2] <= 0)
 
         raise TriangleError
 
