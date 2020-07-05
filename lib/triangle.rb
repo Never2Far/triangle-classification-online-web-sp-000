@@ -27,7 +27,7 @@ def valid?
       return true
     end
 end
-  
+
 
 def kind
   return unless !valid?
@@ -50,7 +50,7 @@ end
 
 
 
-# if (@s1 == 0) || (@s2 == 0) || (@s3 == 0) 
+# if (@s1 == 0) || (@s2 == 0) || (@s3 == 0)
 #   begin
 #     raise TriangleError
 #   rescue TriangleError => error
