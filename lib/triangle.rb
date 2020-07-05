@@ -31,14 +31,15 @@ end
 
 
 def kind
-if !valid?
-  return :invalid
-elsif (@sides[0] == @sides[1]) && (@sides[1] == @sides[2])
+valid?
+if (@sides[0] == @sides[1]) && (@sides[1] == @sides[2])
   return :equilateral
 elsif ((@sides[0] == @sides[1]) && (@sides[0] != @sides[2])) || ((@sides[0] == @sides[2]) && (@sides[0] != @sides[1])) || ((@sides[1] == @sides[2]) && (@sides[1] != @sides[0]))
   return :isosceles
 elsif (@sides[0] != @sides[1]) && (@sides[1] != @sides[2])
   return :scalene
+else
+  return :invalid
 end
 end
 
