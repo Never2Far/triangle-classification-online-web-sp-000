@@ -11,19 +11,19 @@ end
 def valid?
   # if @sides.any? {|s|  s <= 0 } || @sides.any?
   if (@sides[0] <= 0) || (@sides[1] <= 0) || (@sides[2] <= 0)
-    begin
+    
         raise TriangleError
-      rescue TriangleError => error
-        puts error.message1
-      end
-      return false
+      
+        
+      
+      
   elsif ((@sides[0] + @sides[1]) <= @sides[2]) || ((@sides[0] + @sides[2]) <= @sides[1]) || ((@sides[1] + @sides[2]) <= @sides[0])
-      begin
+      
         raise TriangleError
-      rescue TriangleError => error
-        puts error.message2
-      end
-      return false
+      
+        
+      
+      
     else
       return true
     end
@@ -78,4 +78,25 @@ end
 #   return :isosceles
 # elsif (@s1 != @s2) && (@s2 != @sides[2])
 #   return :scalene
+# end
+
+# def valid?
+#   # if @sides.any? {|s|  s <= 0 } || @sides.any?
+#   if (@sides[0] <= 0) || (@sides[1] <= 0) || (@sides[2] <= 0)
+#     begin
+#         raise TriangleError
+#       rescue TriangleError => error
+#         puts error.message1
+#       end
+#       return false
+#   elsif ((@sides[0] + @sides[1]) <= @sides[2]) || ((@sides[0] + @sides[2]) <= @sides[1]) || ((@sides[1] + @sides[2]) <= @sides[0])
+#       begin
+#         raise TriangleError
+#       rescue TriangleError => error
+#         puts error.message2
+#       end
+#       return false
+#     else
+#       return true
+#     end
 # end
