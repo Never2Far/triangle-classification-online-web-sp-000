@@ -36,7 +36,7 @@ class TriangleError < StandardError
   # def message1
   #   "INVALID TRIANGLE: All sides of a triangle must have a length greater than 0!"
   # end
-  # 
+  #
   # def message2
   #   "INVALID TRIANGLE: The sum of the lengths of two sides of a triangle must exceed that of the third."
   # end
