@@ -32,11 +32,11 @@ end
 def kind
 if !valid?
   return nil
-elsif (@s1 == @s2) && (@s2 == @s3)
+elsif (@sides[0] == @sides[1]) && (@sides[1] == @sides[2])
   return :equilateral
-elsif ((@s1 == @s2) && (@s1 != @s3)) || ((@s1 == @s3) && (@s1 != @s2)) || ((@s2 == @s3) && (@s2 != @s1))
+elsif ((@sides[0] == @sides[1]) && (@sides[0] != @sides[2])) || ((@sides[0] == @sides[2]) && (@sides[0] != @sides[1])) || ((@sides[1] == @sides[2]) && (@sides[1] != @sides[0]))
   return :isosceles
-elsif (@s1 != @s2) && (@s2 != @s3)
+elsif (@sides[0] != @sides[1]) && (@sides[1] != @sides[2])
   return :scalene
 end
 end
@@ -58,22 +58,22 @@ end
 
 
 
-# if (@s1 == 0) || (@s2 == 0) || (@s3 == 0)
+# if (@s1 == 0) || (@s2 == 0) || (@sides[2] == 0)
 #   begin
 #     raise TriangleError
 #   rescue TriangleError => error
 #     puts error.message1
 #   end
-# elsif ((@s1 + @s2) <= @s3) || ((@s1 + @s3) <= @s2) || ((@s2 + @s3) <= @s1)
+# elsif ((@s1 + @s2) <= @sides[2]) || ((@s1 + @sides[2]) <= @s2) || ((@s2 + @sides[2]) <= @s1)
 #   begin
 #     raise TriangleError
 #   rescue TriangleError => error
 #     puts error.message2
 #   end
-# elsif (@s1 == @s2) && (@s2 == @s3)
+# elsif (@s1 == @s2) && (@s2 == @sides[2])
 #   return :equilateral
-# elsif ((@s1 == @s2) && (@s1 != @s3)) || ((@s1 == @s3) && (@s1 != @s2)) || ((@s2 == @s3) && (@s2 != @s1))
+# elsif ((@s1 == @s2) && (@s1 != @sides[2])) || ((@s1 == @sides[2]) && (@s1 != @s2)) || ((@s2 == @sides[2]) && (@s2 != @s1))
 #   return :isosceles
-# elsif (@s1 != @s2) && (@s2 != @s3)
+# elsif (@s1 != @s2) && (@s2 != @sides[2])
 #   return :scalene
 # end
