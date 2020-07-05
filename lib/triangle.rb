@@ -30,8 +30,9 @@ end
 
 
 def kind
-  return unless !valid?
-if (@s1 == @s2) && (@s2 == @s3)
+if !valid?
+  return nil
+elsif (@s1 == @s2) && (@s2 == @s3)
   return :equilateral
 elsif ((@s1 == @s2) && (@s1 != @s3)) || ((@s1 == @s3) && (@s1 != @s2)) || ((@s2 == @s3) && (@s2 != @s1))
   return :isosceles
