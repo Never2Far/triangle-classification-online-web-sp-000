@@ -30,7 +30,7 @@ end
 
 
 def kind
-valid? ? : return false
+if valid? ? : return false
 
 if (@sides[0] == @sides[1]) && (@sides[1] == @sides[2])
   return :equilateral
